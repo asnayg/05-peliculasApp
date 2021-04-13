@@ -1,0 +1,28 @@
+
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col>Favoritos</ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- <app-slideshow-poster [peliculas]="peliculas"></app-slideshow-poster> -->
+
+  <div *ngFor="let favoritopeli of favoritoGenero">
+
+    <ion-grid fixed *ngIf="favoritopeli.pelis.length > 0">
+      <ion-row>
+        <ion-col size="12">
+          <h4>{{ favoritopeli.genero}}</h4>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <app-slideshow-poster [peliculas]="favoritopeli.pelis"></app-slideshow-poster>
+
+
+  </div>
+
+</ion-content>
